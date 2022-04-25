@@ -12,4 +12,4 @@ A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
 
 OVERVIEW
 ---
-BEMAP is 
+BEMAP is a benchmark suite construction methodology that construct benchmark suites from real Android applications.
