@@ -17,8 +17,10 @@ BEMAP is a benchmark suite construction methodology that construct benchmark sui
 STEP 1: Micro-architecture Dependent Features Collection (MFC)
 ---
 First, 
+
 STEP 2: Representative Feature Construction (RFC)
 ---
+
 
 STEP 3: Benchmark Suite Construction (BSC)
 ---
