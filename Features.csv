@@ -14,3 +14,5 @@ ITLM,iTLB-load-misses,"TLB for instructions, load misses"
 1ILM,L1-dcache-store-misses,"Level 1 data cache, store misses"
 BRMS,branch-misses,Branch prediction misses
 CAMI,cache-misses,Cache misses
+,,
+Please click Features.jpg in the document list on the left to view the tabular form.,,
