@@ -16,7 +16,7 @@ BEMAP is a benchmark suite construction methodology that construct benchmark sui
 
 Micro-architecture Dependent Features Collection (MFC)
 ---
-Step 1: Installation for Ubuntu 16.04 LTS on personal computer (PC) and installation for Android Debug Bridge(ADB) on PC.
+Step 1: Installation for Ubuntu 16.04 LTS on personal computer (PC) and make sure the following tool requirements are statisfied.
 ```Bash
 # Update the packages.
 $ sudo apt-get update
@@ -31,7 +31,9 @@ $ adb version
 Step 2: Root the smart phone and connect it to the personal computer with USB cable.
 
 Step 3: Put SimplePerf into smart phone with ADB.
+```Bash
 
+```
 Representative Feature Construction (RFC)
 ---
 
