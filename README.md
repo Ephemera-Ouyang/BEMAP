@@ -1,3 +1,5 @@
+The file format of csv is inconvenient to read, please refer to the same name file of jpg format.
+---
 BEMAP
 =====
 A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
