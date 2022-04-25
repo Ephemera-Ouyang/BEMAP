@@ -1,4 +1,4 @@
 BEMAP
 =====
-a Benchmark Methodology for Android Smart Phone Processors.
+A Benchmark Methodology for Android Smart Phone Processors.
 ---
