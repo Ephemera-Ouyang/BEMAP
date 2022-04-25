@@ -16,7 +16,7 @@ BEMAP is a benchmark suite construction methodology that construct benchmark sui
 
 STEP 1: Micro-architecture Dependent Features Collection (MFC)
 ---
-First, installation for 
+First, installation for Ubuntu 16.04 LTS on personal computer.
 
 STEP 2: Representative Feature Construction (RFC)
 ---
