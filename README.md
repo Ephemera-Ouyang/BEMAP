@@ -12,4 +12,4 @@ A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
 
 OVERVIEW
 ---
-BEMAP is a benchmark suite construction methodology that construct benchmark suites from real Android applications.
+BEMAP is a benchmark suite construction methodology that construct benchmark suites from real Android applications. It consists of three components: MFC, RFC, and BSC. First, MFC employs AutoProfiler to automatically imitate highly frequently used user operations (e.g., screen sliding) and collect the micro-architecture dependent features (e.g., cache misses) at the same time. 
