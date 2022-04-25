@@ -20,7 +20,7 @@ Step 1: Installation for Ubuntu 16.04 LTS on personal computer.
 
 Step 2: Root the smart phone and connect it to the personal computer with USB cable.
 
-Step 3: 
+Step 3: Put SimplePerf into smart phone with ADB
 
 Representative Feature Construction (RFC)
 ---
