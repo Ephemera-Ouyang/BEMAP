@@ -23,6 +23,9 @@ $ sudo apt-get update
 
 # Update Android Debug Bridge(ABD).
 $ sudo apt-get install android-tools-adb
+
+# Check ADB.
+$ adb version
 ```
 
 Step 2: Root the smart phone and connect it to the personal computer with USB cable.
