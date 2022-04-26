@@ -44,9 +44,11 @@ $ cd BEMAP/MFC/Autoprofiler
 $ adb push simpleperf /data/local/tmp/./
 ```
 
-Step 4: Collection Original Micro-architecture Features with Autoprofiler.
+Step 4: Collection Micro-architecture Dependent Features with Autoprofiler.
 ```
-# 
+# Identify your smart phone (e.g., mate30).
+$ cd mate30
+$ bash auto_all.sh
 ```
 
 Representative Feature Construction (RFC)
