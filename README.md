@@ -61,9 +61,13 @@ Step 7: Preprocess the data with data_division.ipynb
 
 Representative Feature Construction (RFC)
 ---
-Step 8: 
+Step 8: Indentfy important micro-architecture dependent features in terms of IPC.
+```
+$ cd ../../RFC
+$ python train_csv_sgbrt.py
+```
 
-Step 9:
+Step 9: Representative features (RepFeats) construction.
 
 Benchmark Suite Construction (BSC)
 ---
