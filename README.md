@@ -32,7 +32,7 @@ $ adb version
 # Check Python
 $ python --version
 
-# clone the BEMAP git repository and build BEMAP. We will change this URL to the repository URL on github after paper has been reviewed.
+# clone the BEMAP git repository and build BEMAP. We will change this URL to the repository URL on github after the paper has been reviewed.
 $ git clone https://anonymous.4open.science/r/BEMAP
 ```
 
