@@ -45,22 +45,27 @@ $ adb push simpleperf /data/local/tmp/./
 ```
 
 Step 5: Collection Micro-architecture Dependent Features with Autoprofiler.
-```
+```Bash
 # Identify your smart phone (e.g., mate30).
 $ cd mate30
 $ bash auto_all.sh
 ```
 
 Step 6: Extract original features data from txt file into CSV file.
-```
+```Bash
 $ cd ../../Original Data Processing
-$ python main.py
+$ python extract.py
 ```
 
+Step 7: Preprocess the data with data_division.ipynb
 
 Representative Feature Construction (RFC)
 ---
+Step 8: 
 
+Step 9:
 
 Benchmark Suite Construction (BSC)
 ---
+
+Step 10:
