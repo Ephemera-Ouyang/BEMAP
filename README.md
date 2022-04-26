@@ -51,6 +51,13 @@ $ cd mate30
 $ bash auto_all.sh
 ```
 
+Step 6: Extract original features data from txt file into CSV file.
+```
+$ cd ../../Original Data Processing
+$ python main.py
+```
+
+
 Representative Feature Construction (RFC)
 ---
 
