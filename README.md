@@ -79,5 +79,3 @@ Step 10: Using K-means to clustering applications presented by Repfeats and sele
 $ cd ../BSC
 $ python ICA_Kmeans.py
 ```
-
-Step 10:
