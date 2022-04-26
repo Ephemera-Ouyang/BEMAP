@@ -32,16 +32,23 @@ $ adb version
 # Check Python
 $ python --version
 
-# clone the BEMAP git repository and build BEMAP. We will change this URL to the repository URL on github after the paper has been reviewed.
-$ git clone https://anonymous.4open.science/r/BEMAP
 ```
 
 Step 2: Root the smart phone and connect it to the personal computer with USB cable.
 
-Step 3: Put SimplePerf into smart phone with ADB.
-```Bash
+Step 3: Download BEMAP. https://anonymous.4open.science/r/BEMAP/
 
+Step 4: Put SimplePerf into smart phone with ADB.
+```Bash
+$ cd BEMAP/MFC/Autoprofiler
+$ adb push simpleperf /data/local/tmp/./
 ```
+
+Step 4: Collection Original Micro-architecture Features with Autoprofiler.
+```
+# 
+```
+
 Representative Feature Construction (RFC)
 ---
 
