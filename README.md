@@ -1,4 +1,4 @@
-The file format of csv is inconvenient to read, please refer to the same name file of jpg format.
+The file format of CSV is inconvenient to read, please refer to the same name file of jpg format.
 ---
 BEMAP
 =====
@@ -14,11 +14,11 @@ A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
 
 OVERVIEW
 ---
-BEMAP is a benchmark suite construction methodology that construct benchmark suites from real Android applications. It consists of three components: MFC, RFC, and BSC. **First**, MFC employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the micro-architecture dependent features (e.g., cache misses) at the same time. **Second**, RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from micro-architecture dependent features collected by MFC. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects the common applications from the application groups as benchmarks.
+BEMAP is a benchmark suite construction methodology that constructs benchmark suites from real Android applications. It consists of three components: MFC, RFC, and BSC. **First**, MFC employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the micro-architecture dependent features (e.g., cache misses) at the same time. **Second**, RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from micro-architecture dependent features collected by MFC. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects the common applications from the application groups as benchmarks.
 
 Micro-architecture Dependent Features Collection (MFC)
 ---
-Step 1: Installation for Ubuntu 16.04 LTS on personal computer (PC) and make sure the following tool requirements are statisfied.
+Step 1: Installation for Ubuntu 16.04 LTS on a personal computer (PC) and make sure the following tool requirements are satisfied.
 ```Bash
 # Update the packages.
 $ sudo apt-get update
@@ -61,7 +61,7 @@ Step 7: Preprocess the data with data_division.ipynb
 
 Representative Feature Construction (RFC)
 ---
-Step 8: Indentfy important micro-architecture dependent features in terms of IPC.
+Step 8: Identify important micro-architecture dependent features in terms of IPC.
 ```
 $ cd ../../RFC
 $ python train_csv_sgbrt.py
