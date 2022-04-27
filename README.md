@@ -1,4 +1,4 @@
-The file format of CSV is inconvenient to read, please refer to the same name file of jpg format.
+The file format of csv is inconvenient to read, please refer to the same name file of jpg format.
 ---
 BEMAP
 =====
