@@ -80,3 +80,7 @@ Step 10: Using K-means to clustering applications presented by Repfeats and sele
 $ cd ../BSC
 $ python ICA_Kmeans.py
 ```
+
+SPBench
+---
+Here are [Android application packages(APKs)]() of benchmarks in SPBench.
