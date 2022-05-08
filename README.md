@@ -45,7 +45,7 @@ $ cd BEMAP/MFC/Autoprofiler
 $ adb push simpleperf /data/local/tmp/./
 ```
 
-Step 5: Collection Micro-architecture Dependent Features with Autoprofiler.
+Step 5: Collect Micro-architecture Dependent Features with Autoprofiler.
 ```Bash
 # Identify your smart phone (e.g., mate30).
 $ cd mate30
