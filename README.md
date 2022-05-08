@@ -30,7 +30,7 @@ $ sudo apt-get install android-tools-adb
 # Check ADB.
 $ adb version
 
-# Check Python
+# Check Python.
 $ python --version
 
 ```
