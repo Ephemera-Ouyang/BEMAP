@@ -108,18 +108,19 @@ def ICAReduction(dimensions, inputFile):
 
         mean_of_data = np.matrix(d)
 
-        with open(curLoc + '/NewSamples/ICA/afterICA_' + str(numOfComponents) + '.csv', 'w', newline='') as matrixFile:
+        with open(curLoc + '/BEMAP/RFC/afterICA_' + str(numOfComponents) + '.csv', 'w', newline='') as matrixFile:
             matrixFileWriter = csv.writer(matrixFile)
-            matrixFileWriter.writerow(headerFroOutput)
+           matrixFileWriter.writerow(headerFroOutput)
             wX = X.tolist()
             for wx in wX:
                 matrixFileWriter.writerow(wx)
 
-        with open(curLoc + '/NewSamples/ICA/transformingMatrixICA_' + str(numOfComponents) + '.csv', 'w', newline='') as matrixFile:
+        with open(curLoc + '/BEMAP/RFC/transformingMatrixICA_' + str(numOfComponents) + '.csv', 'w', newline='') as matrixFile:
             matrixFileWriter = csv.writer(matrixFile)
             wb = numpy.linalg.pinv(b).tolist()
             for wb_ in wb:
                 matrixFileWriter.writerow(wb_)
 
 if __name__ == '__main__':
-    ICAReduction()
+	trainSet = input("Input the path of trainSet:\n")
+	ICAReduction(dimensions=[16,20,24], inputFile=trainSet)

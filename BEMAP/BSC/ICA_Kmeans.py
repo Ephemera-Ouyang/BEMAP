@@ -13,8 +13,8 @@ import pandas as pd
 
 curLoc = os.getcwd()
 
-trainSet = curLoc + "/newData0404/" +"note10+xiaomi11/SGBRT+ICAandPCA/ICAandPCA_train.csv"
-validationSet = curLoc + "/newData0404/" + "note10+xiaomi11/SGBRT+ICAandPCA/ICAandPCA_validation.csv"
+trainSet = curLoc + "/../RFC/" +"note10+xiaomi11/SGBRT+ICAandPCA/ICAandPCA_train.csv"
+validationSet = curLoc + "/../RFC/" + "note10+xiaomi11/SGBRT+ICAandPCA/ICAandPCA_validation.csv"
 dimensions = [16, 20, 26]
 
 #PCADimensinReduction.PCAReduction(dimensions=dimensions, inputFile=trainSet)
@@ -35,14 +35,15 @@ for dimension in dimensions:
 kmeans.kmeansForCluster(dimensions = dimensions, dimensionToKP = dimensionToKvaluePCA, dimensionToKI = dimensionToKvalueICA)
 
 
-for reducer in ["PCA","ICA"]:
-    excels = pd.ExcelFile(curLoc + "/Kmeans/using" + str(reducer) + "_Kmeans.xlsx")
+#for reducer in ["PCA","ICA"]:
+for reducer in ["ICA"]:
+    excels = pd.ExcelFile(curLoc + "/../RFC/using" + str(reducer) + "_Kmeans.xlsx")
     sheet_name_list = excels.sheet_names
     print(sheet_name_list)
-    writer = pd.ExcelWriter(curLoc + "/Kmeans/using" + str(reducer) + "_Kmeans_select.xlsx")
+    writer = pd.ExcelWriter(curLoc + "/../RFC/using" + str(reducer) + "_Kmeans_select.xlsx")
     average_IPC_list = []
     for x in range(len(sheet_name_list)):
-        data_kmeans = pd.read_excel(curLoc + "/Kmeans/using" + str(reducer) + "_Kmeans.xlsx", sheet_name=sheet_name_list[x], index_col=0)
+        data_kmeans = pd.read_excel(curLoc + "/../RFC/using" + str(reducer) + "_Kmeans.xlsx", sheet_name=sheet_name_list[x], index_col=0)
         pd_data_select = pd.DataFrame()
         pd_data_select = data_kmeans[data_kmeans['labels'] == 0].sort_values(by='IPC').iloc[
             int((data_kmeans[data_kmeans['labels'] == 0].sort_values(by='IPC')['IPC'].count()) / 2)].to_frame().T

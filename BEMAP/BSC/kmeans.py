@@ -11,15 +11,15 @@ def kmeansForCluster(dimensions, dimensionToKP, dimensionToKI):
 
     curLoc = os.getcwd()
 
-    compressionCodecs = ['PCA','ICA']
+    compressionCodecs = ['ICA']
     dimensions = dimensions
     dimensionToKPCA = dimensionToKP
     dimensionToKICA = dimensionToKI
 
     for compressionCodec in compressionCodecs:
-        writer = pd.ExcelWriter(curLoc + '/Kmeans/using' + str(compressionCodec) + '_Kmeans.xlsx')
+        writer = pd.ExcelWriter(curLoc + '/../RFC/using' + str(compressionCodec) + '_Kmeans.xlsx')
         for dimension in dimensions:
-            data_initial = pd.read_csv(curLoc + '/NewSamples/NoteAfterPCAandICA/using' + str(compressionCodec) + '_' + str(dimension) + '.csv')
+            data_initial = pd.read_csv(curLoc + '/../RFC/NoteAfterPCAandICA/using' + str(compressionCodec) + '_' + str(dimension) + '.csv')
             d=data_initial.values.tolist()
 
             a = np.array(d)
