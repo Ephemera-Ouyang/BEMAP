@@ -71,6 +71,7 @@ $ python train_csv_sgbrt.py
 Step 9: Representative features (RepFeats) construction.
 ```Bash
 $ python ICADimensionReduction.py
+$ python PCAandICACompressOriginal.py
 ```
 
 Benchmark Suite Construction (BSC)
