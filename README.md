@@ -76,7 +76,7 @@ $ python PCAandICACompressOriginal.py
 
 Benchmark Suite Construction (BSC)
 ---
-Step 10: Using K-means to clustering applications presented by Repfeats and select benchmarks
+Step 10: Using K-means to cluster applications presented by Repfeats and select benchmarks
 ```Bash
 $ cd ../BSC
 $ python ICA_Kmeans.py
