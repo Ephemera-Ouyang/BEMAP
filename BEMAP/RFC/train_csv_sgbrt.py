@@ -21,13 +21,12 @@ from sklearn.model_selection import cross_val_score
 
 
 class Train_CV_SGBRT(object):
-    def __init__(self,dpath,filename,filename_len):
+    def __init__(self,dpath,filename):
 
         self.data_path = dpath
 
         self.algorithm_name = filename
 
-        self.dfilename_len = filename_len
 
     def train_sk_cv(self):
 
@@ -180,10 +179,10 @@ class Train_CV_SGBRT(object):
             Events_Name.append(events_Name)
             Importances.append(importanceS)
             
-            if _ < Itera - 1:
-                """ Deleting the least important 7(10) events in each Iteration 206 """
-                X = pd.DataFrame(X)
-                X[X.columns[indices[-5 * (_ + 1):]]] = 0
+            #if _ < Itera - 1:
+            #    """ Deleting the least important 7(10) events in each Iteration 206 """
+            #    X = pd.DataFrame(X)
+            #    X[X.columns[indices[-5 * (_ + 1):]]] = 0
                 #X = np.array(X)
             
             print('Error: ', err * 100, '%')
@@ -197,13 +196,15 @@ class Train_CV_SGBRT(object):
         res_data = pd.DataFrame()
         res_error = pd.DataFrame()
         res_error['Error'] = Err
-        res_data.loc[1:127,'Error'] = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,Err[-1]]
+        for i in range(125):
+          list_zero.append(0)
+        res_data.loc[0:126,'Error'] = list_zero + [Err[-1]]
         res_data['Indices'] = Indices[-1][0:126]
         res_data['Events_Name'] = Events_Name[-1][0:126]
         res_data['Importances'] = Importances[-1][0:126]
        
-        res_error.to_excel(writer1, sheet_name=self.algorithm_name[dfilename_len+5:-5])
-        res_data.to_excel(writer, sheet_name=self.algorithm_name[dfilename_len+5:-5])
+        #res_error.to_excel(writer1, sheet_name=self.algorithm_name[dfilename_len+5:-5])
+        #res_data.to_excel(writer, sheet_name=self.algorithm_name[dfilename_len+5:-5])
         
         return res
 
@@ -225,20 +226,16 @@ class Train_CV_SGBRT(object):
             #os._exit(1)
 
 if __name__ == '__main__':
-    dfilename_list = ['Mate30_all_slide','Mate30_big_slide','Mate30_all_change','Mate30_big_change','Mate30_all_quench','Note10_all_slide','Note10_all_change','Note10_all_quench','Xiaomi11_all_slide','Xiaomi11_all_change','Xiaomi11_all_quench','Geekbench_huawei','Geekbench_samsung','Geekbench_xiaomi']
-    num_name = 11
-    dtpath = r'F:/mate30_all_slide/LAB_final/LAB_final/'+dfilename_list[num_name]+'_42/single_benchmark'
-    alg_name_list_app = ['Alipay','article','autonavi','baidu','beike','booking','ctrip','didi','health','homelink','hwireader','jingdong','mediacenter','mm','netease','pinduoduo','qiyi','qqlive','qqmusic','ss','tmall','UCMobile','umetrip','weibo','ximalaya','zhihu','bili','duapp','gifmaker','keep','kiwi','liulishuo','meituan','mooc','reader','taobao','tieba','xhs','mtxx','wiz','coolapk','fenbi','netdisk','wps','xueersi','xunlei','yinxiang','popcap','AndroidAnimal','pubgmhd','antutu','ludashi','dianping','autohome','dragon','ele','cmb','douyu','jiayuan','qqdownload','qqmail','mail','qgame','kuaikan','video','dwrg','miniworld','snake','onmyoji','sgame']
-    alg_name_list = benchmark_name
 
-    writer = pd.ExcelWriter(r'F:/mate30_all_slide/LAB_final/LAB_final/result/'+dfilename_list[num_name]+'_top16_result.xlsx')
-    writer1 = pd.ExcelWriter(r'F:/mate30_all_slide/LAB_final/LAB_final/result/'+dfilename_list[num_name]+'_top16_error_result.xlsx')
-    dfilename_len = len(dfilename_list[num_name])
 
-    for i in range(len(alg_name_list)):
-         alg_name = 'nor_'+dfilename_list[num_name]+'_'+alg_name_list[i]+'_pred'
-        Train_CV_SGBRT(dtpath,alg_name,dfilename_len).__init__(dtpath,alg_name,dfilename_len)
-        Train_CV_SGBRT(dtpath,alg_name,dfilename_len).build()
+    writer = pd.ExcelWriter('/MFC/all_top_result.xlsx')
+    writer1 = pd.ExcelWriter('/MFC/all_top_error_result.xlsx')
+
+    dtpath = '/MFC/'
+    alg_name = 'mate30_note10_xiaomi11_pred_sgbrt.csv'
+
+    Train_CV_SGBRT(dtpath,alg_name,dfilename_len).__init__(dtpath,alg_name,dfilename_len)
+    Train_CV_SGBRT(dtpath,alg_name,dfilename_len).build()
     writer1.save()
     writer1.close()
     writer.save()
