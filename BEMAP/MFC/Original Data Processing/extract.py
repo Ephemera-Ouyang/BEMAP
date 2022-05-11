@@ -31,25 +31,8 @@ def get_APP_name(CPI_and_APP_dir):
     return CPI_list, APP_list
 
 
-def get_APP_name_2(APP_dir):
-    APP_list = []
-    # APP_list = []
-    file_handle = open(APP_dir, 'r')
-    iteration = 0
-    for line in file_handle.readlines():
-        if iteration == 0:
-            line = line.strip()
-            temp = line.split(",")
-            for i in range(len(temp)):
-                temp[i] = temp[i].replace("\'", '')
-                temp[i] = temp[i].replace("\"", '')
-            APP_list.extend(temp)
-
-        iteration += 1
-    return APP_list
-
-
 def get_event(event_file_dir):
+    # event name handling
     file_handle = open(event_file_dir, 'r')
     for line in file_handle.readlines():
         line = line.strip()
@@ -73,34 +56,27 @@ def get_event(event_file_dir):
 
 
 def build_event_reg_pattern(event):
-    # event_id_pattern_list = []
+	# Create a corresponding pattern based on all event names.
     event_name_pattern_list = []
     for i in range(len(event)):
-        # temp = '\d{1,30}(?=  '+ event[i] +')'
-        # event_id_pattern_list.append(re.compile(temp))
         event_name_pattern_list.append(re.compile('\s{1}' + event[i] + '\s{1}'))
-    # print(event_name_pattern_list)
     return event_name_pattern_list
 
 
 def get_feature_name(txt_dir):
-    # temp = txt_dir.strip().rsplit('/')[2] + '_'
-    # print(temp)
-    print(txt_dir)
+	# Only extract the feature name from Alipay.txt because other TXT files are the same as the Alipay feature name.
     feature_list = ['instructions', 'instruction per cycles', 'cpu-cycles', 'miss rate']
-
-    # temp =  '(?<=\d).*(?=# )'
-    # pattern_temp = re.compile(temp)
 
     reg_find_feature = '(?<=%).*(?=\(100%\))'
     pattern_find_feature = re.compile(reg_find_feature)
-
+	
+    # Handle values with commas for later pandas calculations.
     num_handle = '\d+,\d+?'
     pattern_num_handle = re.compile(num_handle)
 
-    # file_handle = open(txt_dir + temp + 'Alipay.txt', 'r')
+    file_handle = open(txt_dir + temp + 'Alipay.txt', 'r')
     # file_handle = open(txt_dir + 'M_AEX_XTS.txt', 'r')
-    file_handle = open(txt_dir + 'bigolive.txt', 'r')
+    #file_handle = open(txt_dir + 'bigolive.txt', 'r')
     line_ana = ''
     for line in file_handle.readlines():
         line.strip()
@@ -121,8 +97,6 @@ def build_feature_reg_pattern(feature_list):
     feature_name_pattern_list = []
     for feature in feature_list:
         if feature == 'memory read operation miss rate' or feature == 'miss rate':
-            # avoid find subset result when check 'memory read operation miss rate',
-            # but return 'miss rate'
             feature_name_pattern_list.append(re.compile('%\s{1}' + feature + '\s{1}'))
         else:
             feature_name_pattern_list.append(re.compile('\s{1}' + feature + '\s{1}'))
@@ -168,6 +142,7 @@ def create_table(file_txt, file_handle, writer,
     line_ana = ''
     for line in file_handle.readlines():
         if line == '\n':
+			# Handling data with commas
             for st in pattern_num_handle.finditer(line_ana):
                 mm = st.group()
                 line_ana = line_ana.replace(mm, mm.replace(",", ""))
@@ -190,12 +165,14 @@ def create_table(file_txt, file_handle, writer,
                         else:
 
                             feature_name = feature_name[0]
+
                             if feature_name[0] == '%':
                                 # print(feature_name)
                                 feature_name = feature_name[1:]
                                 feature_name = feature_name.strip()
                             else:
                                 feature_name = feature_name.strip()
+
                             if feature_name == feature_list[0] or feature_name == feature_list[2]:
                                 # 'insturctions' and 'cpu-cycles' position is stable use below pattern
                                 # print(feature_name,feature_list[0])
@@ -228,7 +205,7 @@ def create_table(file_txt, file_handle, writer,
                     df.loc[df[col] == data, col] = temp
                 except Exception as e:
                     # print('% value has already replaced')
-                    # print('this data has already replace before') #core idea 注释掉是为了会打很多次
+                    # print('this data has already replace before')
                     pass
     experm_num = len(df[df['event_name'] == event[0]])
     print(event[0] + ' repeat experiment ' + str(experm_num) + " times")
@@ -289,14 +266,7 @@ def create_table(file_txt, file_handle, writer,
             data.append(mean)
         data[5] = sum(data[5:])
         data = data[:6]
-        # print(data)
-        """
-        if data[3] == 0.0: # 基于某些数据没有cycles per instruction/均值 手动计算
-            if data[4] == 0 and data[2] == 0:
-                data[3] = 0
-            else:
-                data[3] = round(data[4] / data[2], 9)
-        """
+
         if data[3] == 0.0:  # 手动计算
             if data[4] == 0 and data[2] == 0:
                 data[3] = 0
@@ -316,27 +286,20 @@ def _excelAddSheet(dataframe, excelWriter, sheet_name):
 
 
 if __name__ == '__main__':
-	print("Enter your smart phone(mate30,note10,or mi11):")
+	print("Enter your smart phone(mate30,note10,or mi11):\n")
 	smartphone = input()
-	print("Enter your operation(sliding,switching,or quenching):")
+	print("Enter your operation(sliding,switching,or quenching):\n")
 	operation = input()	
-	phone
-    # txt_dir = './geekbench/huawei/geekbench_huawei/' # path which save txt file(original data)
     txt_dir = '../AutoProfiler/'+ smartphone +'/' + operation +'/'  # path which save txt file(original data)
 
-    # CPI_and_APP_dir = './geekbench/app.txt'
-    # CPI_and_APP_dir = './APP.txt'
-    # CPI_list,APP_list = get_APP_name(CPI_and_APP_dir)
+    CPI_and_APP_dir = './APP.txt'
+    CPI_list,APP_list = get_APP_name(CPI_and_APP_dir)
 
-    APP_list = get_APP_name_2('./APP.txt')
-    #APP_list = get_APP_name_2('./xiaomi-20220327-100/APP.txt')
-    #APP_list_20 = get_APP_name_2('./xiaomi-20220327-100/new_added_app.txt')
-    #APP_list.extend(APP_list_20)
     print(len(APP_list))
 
     # event_file_dir = './event.txt'
 	if  smartphone == "mi11":
-		event_file_dir = './event2.txt' #xiaomi only use event2
+		event_file_dir = './event for mi11.txt' #xiaomi only use event2
 	else:
 		event_file_dir = './event.txt'
     event = get_event(event_file_dir)  # get all event name:e.g. 'branch-load-misses'
