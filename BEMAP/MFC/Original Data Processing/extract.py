@@ -286,10 +286,8 @@ def _excelAddSheet(dataframe, excelWriter, sheet_name):
 
 
 if __name__ == '__main__':
-	print("Enter your smart phone(mate30,note10,or mi11):\n")
-	smartphone = input()
-	print("Enter your operation(sliding,switching,or quenching):\n")
-	operation = input()	
+    smartphone = input("Enter your smart phone(mate30,note10,or mi11):\n")
+    operation = input("Enter your operation(sliding,switching,or quenching):\n")	
     txt_dir = '../AutoProfiler/'+ smartphone +'/' + operation +'/'  # path which save txt file(original data)
 
     CPI_and_APP_dir = './APP.txt'
