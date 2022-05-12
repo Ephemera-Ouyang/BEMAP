@@ -100,7 +100,7 @@ def PCAandICACompressValidation(dimensions, validationSet):
                 curLoc + "/BEMAP/RFC/" + str(method) + "/transformingMatrix" + str(method) + "_" + str(
                     numOfComponents) + ".csv")
             b = np.matrix(transforMatrix)
-            output = noteMatrixAfterMean * b
+            output = noteMatrix * b
             with open(
                     curLoc + '/BEMAP/RFC/NoteAfterPCAandICA/using' + str(method) + '_' + str(numOfComponents) + '.csv',
                     'w',
