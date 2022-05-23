@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-def kmeansForCluster(dimensions, dimensionToKP, dimensionToKI):
+def kmeansForCluster(dimensions, dimensionToKI):
     import os
 
     import numpy as np
@@ -13,7 +13,7 @@ def kmeansForCluster(dimensions, dimensionToKP, dimensionToKI):
 
     compressionCodecs = ['ICA']
     dimensions = dimensions
-    dimensionToKPCA = dimensionToKP
+    #dimensionToKPCA = dimensionToKP
     dimensionToKICA = dimensionToKI
 
     for compressionCodec in compressionCodecs:
