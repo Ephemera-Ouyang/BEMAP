@@ -32,7 +32,7 @@ for dimension in dimensions:
 #   decideKvaluePCA.decide(dimension)
 #    dimensionToKvaluePCA[dimension] = int(input("Input the k value of dimension " + str(dimension) + " for PCA:\n"))
 
-kmeans.kmeansForCluster(dimensions = dimensions, dimensionToKP = dimensionToKvaluePCA, dimensionToKI = dimensionToKvalueICA)
+kmeans.kmeansForCluster(dimensions = dimensions, dimensionToKI = dimensionToKvalueICA)
 
 
 #for reducer in ["PCA","ICA"]:
