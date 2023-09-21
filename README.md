@@ -7,7 +7,7 @@ A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
 
 * Conetents:
   1. Overview
-  2. Micro-architecture Dependent Features Collection (MFC)
+  2. microarchitecture Dependent Features Collection (MFC)
   3. Representative Feature Construction (RFC)
   4. Benchmark Suite Construction (BSC)
   5. SPBench
@@ -15,9 +15,9 @@ A Benchmark Suite Construction Methodology for Android Smart Phone Processors.
 
 OVERVIEW
 ---
-BEMAP is a benchmark suite construction methodology that constructs benchmark suites from real Android applications. It consists of three components: MFC, RFC, and BSC. **First**, MFC employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the micro-architecture dependent features (e.g., cache misses) at the same time. **Second**, RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from micro-architecture dependent features collected by MFC. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects applications from the application groups as benchmarks. SPBench is a benchmark suite constructed by BEMAP.
+BEMAP is a benchmark suite construction methodology that constructs benchmark suites from real Android applications. It consists of three components: MFC, RFC, and BSC. **First**, MFC employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the microarchitecture dependent features (e.g., cache misses) at the same time. **Second**, RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from microarchitecture dependent features collected by MFC. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects applications from the application groups as benchmarks. SPBench is a benchmark suite constructed by BEMAP.
 
-Micro-architecture Dependent Features Collection (MFC)
+Microarchitecture Dependent Features Collection (MFC)
 ---
 Step 1: Installation for Ubuntu 16.04 LTS on a personal computer (PC) and make sure the following tool requirements are satisfied.
 ```Bash
@@ -45,7 +45,7 @@ $ cd BEMAP/MFC/Autoprofiler
 $ adb push simpleperf /data/local/tmp/./
 ```
 
-Step 5: Collect Micro-architecture Dependent Features with Autoprofiler.
+Step 5: Collect Microarchitecture Dependent Features with Autoprofiler.
 ```Bash
 # Identify your smart phone (e.g., mate30).
 $ cd mate30
@@ -62,7 +62,7 @@ Step 7: Preprocess the data with data_division.ipynb
 
 Representative Feature Construction (RFC)
 ---
-Step 8: Identify important micro-architecture dependent features in terms of IPC.
+Step 8: Identify important microarchitecture dependent features in terms of IPC.
 ```Bash
 $ cd ../../RFC
 $ python train_csv_sgbrt.py
