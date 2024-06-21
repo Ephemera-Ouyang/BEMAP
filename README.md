@@ -92,3 +92,12 @@ To use SPBench, follow these steps:
 - Access the provided [Google Drive link](https://drive.google.com/drive/folders/1W1Y0coZDmBmbTkgHi4RrsbEj_Z2oWxN4?usp=sharing) to download the benchmark APKs.
 - Transfer the APK files and Autoprofiler to your Android device and install them by following steps 1 to 4.
 
+### 2. Run Benchmarks
+- Launch each benchmark application on your Android device.
+- running SPBench
+```Bash
+# Identify your smart phone (e.g., mate30).
+$ cd mate30
+$ bash auto_all_SPBench.sh
+``` 
+- Note: users can modify the simulation files to adapt the scenarios to their needs. They can run these benchmarks for as long as they want by adjusting the time parameters of the profile in the `IPC4_cycle.sh` script.
