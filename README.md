@@ -97,7 +97,7 @@ To use SPBench, follow these steps:
 ```bash
    for apk in *.apk; do adb install "$apk"; done
 ```
-- running SPBench
+- Running SPBench
 ```Bash
 # Identify your smart phone (e.g., Oneplus Ace).
 $ cd SPBench
