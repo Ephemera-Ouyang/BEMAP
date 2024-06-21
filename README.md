@@ -93,7 +93,9 @@ To use SPBench, follow these steps:
 - Transfer the APK files and Autoprofiler to your Android device and install them by following steps 1 to 4.
 
 ### 2. Run Benchmarks
-- Launch each benchmark application on your Android device.
+- Installing each benchmark application on your Android device using ADB.
+```bash
+   for apk in *.apk; do adb install "$apk"; done
 - running SPBench
 ```Bash
 # Identify your smart phone (e.g., mate30).
