@@ -86,5 +86,9 @@ SPBench
 ---
 Here are [Android application packages(APKs)](https://drive.google.com/drive/folders/1W1Y0coZDmBmbTkgHi4RrsbEj_Z2oWxN4?usp=sharing) of benchmarks in SPBench.
 ---
-Using SPBench
+To use SPBench, follow these steps:
+
+### 1. Download and Install APKs
+- Access the provided [Google Drive link](https://drive.google.com/drive/folders/1W1Y0coZDmBmbTkgHi4RrsbEj_Z2oWxN4?usp=sharing) to download the benchmark APKs.
+- Transfer the APK files to your Android device and install them.
 
