@@ -99,8 +99,8 @@ To use SPBench, follow these steps:
 ```
 - running SPBench
 ```Bash
-# Identify your smart phone (e.g., mate30).
-$ cd mate30
+# Identify your smart phone (e.g., Oneplus Ace).
+$ cd SPBench
 $ bash auto_all_SPBench.sh
 ``` 
 - Note: users can modify the simulation files to adapt the scenarios to their needs. They can run these benchmarks for as long as they want by adjusting the time parameters of the profile in the `IPC4_cycle.sh` script.
