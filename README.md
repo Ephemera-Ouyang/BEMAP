@@ -96,6 +96,7 @@ To use SPBench, follow these steps:
 - Installing each benchmark application on your Android device using ADB.
 ```bash
    for apk in *.apk; do adb install "$apk"; done
+```
 - running SPBench
 ```Bash
 # Identify your smart phone (e.g., mate30).
