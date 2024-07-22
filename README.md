@@ -8,14 +8,14 @@ Constructing a Supplementary Benchmark Suite to Represent Android Applications w
 * Conetents:
   1. Overview
   2. Source Performance Counters from Multiple Micro-architectures (SPC-MMA)
-  3. Representative Feature Construction (RFC)
+  3. Representative Feature Construction (Two-stage RFC)
   4. Benchmark Suite Construction (BSC)
   5. SPBench
 ***
 
 OVERVIEW
 ---
-BEMAP is a benchmark suite construction methodology that constructs benchmark suites from real Android applications. It consists of three components: SPC-MMA, RFC, and BSC. **First**, SPC-MMA employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the microarchitecture dependent features (e.g., cache misses) at the same time. **Second**, RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from microarchitecture dependent features collected by SPC-MMA. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects applications from the application groups as benchmarks. SPBench is a benchmark suite constructed by BEMAP.
+BEMAP is a benchmark suite construction methodology that constructs benchmark suites from real Android applications. It consists of three components: SPC-MMA, Two-stage RFC, and BSC. **First**, SPC-MMA employs _AutoProfiler_ to automatically imitate interactive operations (e.g., screen sliding) for 100 Android applications and to collect the microarchitecture dependent features (e.g., cache misses) at the same time. **Second**, Two-stage RFC leverages the _two-stage_ approach to construct a small set of representative features (_RepFeats_) from microarchitecture dependent features collected by SPC-MMA. **Third**, BSC performs clustering analysis on 100 real applications represented by _RepFeats_ and selects applications from the application groups as benchmarks. SPBench is a benchmark suite constructed by BEMAP.
 
 Microarchitecture Dependent Features Collection (SPC-MMA)
 ---
@@ -60,7 +60,7 @@ $ python extract.py
 
 Step 7: Preprocess the data with data_division.ipynb
 
-Representative Feature Construction (RFC)
+Representative Feature Construction (Two-stage RFC)
 ---
 Step 8: Identify important microarchitecture dependent features in terms of IPC.
 ```Bash
