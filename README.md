@@ -2,7 +2,7 @@ The file format of csv is inconvenient to read, please refer to the same name fi
 ---
 BEMAP
 =====
-A Benchmark Suite Construction Methodology for Android Smart Phone Processor CPUs.
+Constructing a Supplementary Benchmark Suite to Represent Android Applications with User Interactions by using Performance Counters.
 ---
 
 * Conetents:
